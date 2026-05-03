@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zepto Strategic Outreach</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=VT323&display=swap');
+
+    body {
+      background-color: #050505;
+      color: #E2E8F0;
+      font-family: 'Space Mono', monospace;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .bg-pixel-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, #1E293B 1px, transparent 1px),
+        linear-gradient(to bottom, #1E293B 1px, transparent 1px);
+    }
+
+    .font-pixel { font-family: 'Press Start 2P', cursive; }
+    .font-metric { font-family: 'VT323', monospace; }
+    .font-body { font-family: 'Space Mono', monospace; }
+
+    .pixel-shadow { box-shadow: 6px 6px 0px #950EDB; }
+    .pixel-shadow-sm { box-shadow: 4px 4px 0px #950EDB; }
+    .pixel-border { border: 4px solid #E2E8F0; }
+
+    .ticker-wrap {
+      width: 100%;
+      overflow: hidden;
+      background-color: #E2E8F0;
+      color: #0A0A0A;
+      padding: 8px 0;
+      border-top: 4px solid #E2E8F0;
+      border-bottom: 4px solid #E2E8F0;
+      white-space: nowrap;
+    }
+
+    .ticker-content {
+      display: inline-block;
+      animation: ticker 20s linear infinite;
+      padding-left: 100%;
+    }
+
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .pie-bg {
+      background: conic-gradient(
+        #950EDB 0% 65%, 
+        #E2E8F0 65% 90%, 
+        #1E293B 90% 100%
+      );
+      clip-path: polygon(50% 0%, 100% 0, 100% 50%, 100% 100%, 50% 100%, 0 100%, 0 50%, 0 0);
+    }
+
+    .zigzag-divider {
+      width: 100%;
+      height: 20px;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        #E2E8F0 10px,
+        #E2E8F0 14px
+      );
+      opacity: 0.5;
+    }
+
+    /* Animation CSS for JS observer */
+    .animate-section .anim-pie { transform: scale(0); transition: transform 0.5s ease-out; }
+    .animate-section.is-visible .anim-pie { transform: scale(1); }
+
+    .animate-section .anim-bar-v { height: 0%; transition: height 0.5s; }
+    .animate-section.is-visible .anim-bar-v.target-27 { height: 27%; }
+    .animate-section.is-visible .anim-bar-v.target-54 { height: 54%; }
+    .animate-section.is-visible .anim-bar-v.target-100 { height: 100%; }
+
+    .animate-section .anim-bar-h { width: 0%; transition: width 0.5s; }
+    .animate-section.is-visible .anim-bar-h.target-70 { width: 70%; }
+    .animate-section.is-visible .anim-bar-h.target-65 { width: 65%; }
+    .animate-section.is-visible .anim-bar-h.target-55 { width: 55%; }
+
+    .animate-section .anim-marker { transform: translate(-50%, 150%); opacity: 0; transition: all 0.5s; }
+    .animate-section.is-visible .anim-marker { transform: translate(-50%, 50%); opacity: 1; }
+
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+  </style>
+</head>
+<body>
+  <div class="bg-[#050505] min-h-screen text-[#E2E8F0] relative overflow-hidden bg-pixel-grid pb-24">
+
+    <!-- --- SLIDE 1: INTRODUCTION & HOOK --- -->
+    <section class="min-h-screen flex flex-col justify-center max-w-5xl mx-auto px-6 py-20 relative">
+      <div class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 bg-[#950EDB] pixel-border pixel-shadow flex items-center justify-center font-pixel text-xl font-bold">Z</div>
+          <h1 class="font-pixel text-2xl md:text-3xl leading-snug tracking-tight uppercase text-white">
+            Zepto Strategic<br/>Outreach Deck
+          </h1>
+        </div>
+        
+        <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-8 max-w-4xl relative">
+          <p class="font-body text-lg leading-relaxed text-[#E2E8F0]">
+            <strong class="text-white">Hi, I'm Kunj — and here's what stands out about Zepto:</strong><br/><br/>
+            You've captured the <strong class="text-[#950EDB]">Gen Z mindshare</strong> with premium branding and <strong class="text-[#FFD700]">10-minute delivery</strong>, reaching <strong>10M+ monthly users</strong> and achieving <strong>EBITDA positivity</strong> in mature markets. With Cafe by Zepto expansion, premium category push, and Gen Z social features, you're evolving from "fast groceries" to a <strong class="text-[#950EDB] uppercase tracking-wider">Premium Lifestyle OS</strong>. The next unlock is leveraging brand heat, premium selection, and phygital innovation to drive profitable growth at scale.
+          </p>
+        </div>
+      </div>
+
+      <!-- Horizontal Bar Chart -->
+      <div class="mt-8 space-y-6 flex-grow">
+        <div class="relative">
+          <div class="bg-[#950EDB] pixel-border h-16 flex items-center px-4" style="width: 100%">
+            <span class="font-metric text-2xl text-white">10M+ MAU</span>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-[#E2E8F0] pixel-border h-16 flex items-center px-4" style="width: 70%">
+            <span class="font-metric text-2xl text-[#0A0A0A]">STRONGER GMV RUN RATE ($500M+)</span>
+          </div>
+        </div>
+        <div class="relative mt-12">
+          <div class="bg-[#950EDB] pixel-border h-16 flex items-center px-4 relative z-10" style="width: 50%">
+            <span class="font-metric text-2xl text-white">EBITDA POSITIVE (SELECT MARKETS)</span>
+          </div>
+          <div class="absolute -top-6 -right-12 z-20 transform rotate-12 bg-[#FFD700] text-[#0A0A0A] pixel-border font-pixel text-xs p-2 pixel-shadow shadow-[#950EDB]">
+            PREMIUM SPEED
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16 zigzag-divider"></div>
+    </section>
+
+    <!-- Marquee Ticker -->
+    <div class="ticker-wrap font-pixel text-sm uppercase">
+      <div class="ticker-content">
+        EBITDA Positive Q1 2025 • Cafe Expansion Q2 2025 • Premium Categories Q3 2025 • 10M+ MAU • $500M+ GMV • EBITDA Positive Q1 2025 • Cafe Expansion Q2 2025
+      </div>
+    </div>
+
+    <!-- --- SLIDE 2: USER ANALYSIS --- -->
+    <section class="max-w-6xl mx-auto px-6 py-20 animate-section" id="slide2Ref">
+      <div class="mb-12">
+        <h2 class="font-pixel text-2xl mb-4 uppercase text-[#950EDB]">User Analysis</h2>
+        <p class="font-body text-lg max-w-3xl">
+          Zepto's base is <strong>Gen Z-dominant, premium-seeking, and metro-centric</strong>. Product Authenticity is the #1 priority. The unlock is tailoring the experience by segment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Chart 1: Age Mix Pie -->
+        <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-6 flex flex-col items-center">
+          <h3 class="font-pixel text-sm mb-8">AGE DEMOGRAPHICS</h3>
+          <div class="relative w-48 h-48 mb-6">
+            <div class="absolute inset-0 pie-bg anim-pie"></div>
+            <div class="absolute inset-0 m-auto w-24 h-24 bg-[#0A0A0A] pixel-border flex items-center justify-center z-10">
+              <span class="font-metric text-xl">AGE MIX</span>
+            </div>
+          </div>
+          <div class="flex gap-4 font-metric text-lg flex-wrap justify-center mt-4">
+            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#950EDB] pixel-border"></div> <span class="text-[#E2E8F0]">18-30: 65%</span></div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#E2E8F0] pixel-border"></div> <span class="text-[#0A0A0A] bg-[#E2E8F0] px-1">30-45: 25%</span></div>
+            <div class="flex items-center gap-2"><div class="w-4 h-4 bg-[#1E293B] border-2 border-[#E2E8F0]"></div> <span class="text-[#E2E8F0]">Other: 10%</span></div>
+          </div>
+        </div>
+
+        <!-- Chart 2: Order Type -->
+        <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-6 flex flex-col">
+          <h3 class="font-pixel text-sm mb-8 text-center">ORDER TYPE</h3>
+          <div class="flex justify-around items-end h-48 border-b-4 border-l-4 border-[#E2E8F0] pb-2 pl-2">
+            <div class="flex flex-col items-center justify-end w-1/4 h-full">
+              <span class="font-metric mb-2 text-center text-sm">Planned: 15%</span>
+              <div class="w-full bg-[#1E293B] pixel-border anim-bar-v target-27"></div>
+            </div>
+            <div class="flex flex-col items-center justify-end w-1/4 h-full">
+              <span class="font-metric mb-2 text-center text-sm">Emergency: 30%</span>
+              <div class="w-full bg-[#E2E8F0] pixel-border anim-bar-v target-54 delay-100"></div>
+            </div>
+            <div class="flex flex-col items-center justify-end w-1/4 h-full">
+              <span class="font-metric mb-2 text-center text-sm text-[#950EDB]">Impulse: 55%</span>
+              <div class="w-full bg-[#950EDB] pixel-border anim-bar-v target-100 delay-200"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 3: Pain Priority -->
+        <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-6 flex flex-col justify-center space-y-6">
+          <h3 class="font-pixel text-sm mb-2 text-center">PAIN PRIORITY</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="font-metric flex justify-between mb-1"><span>Product Authenticity</span> <span>70%</span></div>
+              <div class="h-6 w-full bg-[#1E293B] pixel-border"><div class="h-full bg-[#950EDB] anim-bar-h target-70"></div></div>
+            </div>
+            <div>
+              <div class="font-metric flex justify-between mb-1"><span>On-Time Delivery</span> <span>65%</span></div>
+              <div class="h-6 w-full bg-[#1E293B] pixel-border"><div class="h-full bg-[#E2E8F0] anim-bar-h target-65 delay-100"></div></div>
+            </div>
+            <div>
+              <div class="font-metric flex justify-between mb-1"><span>Premium Selection</span> <span>55%</span></div>
+              <div class="h-6 w-full bg-[#1E293B] pixel-border"><div class="h-full bg-[#1E293B] border-r-4 border-[#E2E8F0] anim-bar-h target-55 delay-200"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chart 4: Segment Matrix -->
+        <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-6">
+          <h3 class="font-pixel text-sm mb-6 text-center">USER SEGMENT MATRIX</h3>
+          <div class="relative w-full h-48 border-l-4 border-b-4 border-[#E2E8F0] mb-8 mt-4 ml-4">
+            <span class="absolute -left-10 top-1/2 -translate-y-1/2 -rotate-90 font-metric text-sm tracking-widest uppercase">Brand</span>
+            <span class="absolute -bottom-10 left-1/2 -translate-x-1/2 font-metric text-sm tracking-widest uppercase">Price Sensitivity</span>
+            
+            <div class="absolute left-1/2 top-0 bottom-0 w-0 border-l-2 border-dashed border-[#1E293B]"></div>
+            <div class="absolute top-1/2 left-0 right-0 h-0 border-t-2 border-dashed border-[#1E293B]"></div>
+
+            <div class="absolute w-4 h-4 bg-[#950EDB] pixel-border z-10 anim-marker" style="left: 30%; bottom: 70%; transition-delay: 0.1s;">
+              <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#0A0A0A] border-2 border-[#E2E8F0] px-2 py-1 font-metric text-xs whitespace-nowrap z-20">Gen Z Explorer</div>
+            </div>
+            <div class="absolute w-4 h-4 bg-[#E2E8F0] pixel-border z-10 anim-marker" style="left: 70%; bottom: 60%; transition-delay: 0.2s;">
+              <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#0A0A0A] border-2 border-[#E2E8F0] px-2 py-1 font-metric text-xs whitespace-nowrap z-20 text-[#0A0A0A] !bg-[#E2E8F0]">Premium Seeker</div>
+            </div>
+            <div class="absolute w-4 h-4 bg-[#1E293B] pixel-border z-10 anim-marker" style="left: 40%; bottom: 30%; transition-delay: 0.3s;">
+              <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#0A0A0A] border-2 border-[#E2E8F0] px-2 py-1 font-metric text-xs whitespace-nowrap z-20">Emergency</div>
+            </div>
+            <div class="absolute w-4 h-4 bg-[#0A0A0A] border-2 border-[#E2E8F0] z-10 anim-marker" style="left: 60%; bottom: 40%; transition-delay: 0.4s;">
+              <div class="absolute top-6 left-1/2 -translate-x-1/2 bg-[#0A0A0A] border-2 border-[#E2E8F0] px-2 py-1 font-metric text-xs whitespace-nowrap z-20">Cafe Visitor</div>
+            </div>
+
+            <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-50" preserveAspectRatio="none">
+               <path d="M 32% 30% Q 50% 35% 68% 40%" stroke="#950EDB" stroke-width="2" fill="none" stroke-dasharray="4 4" marker-end="url(#arrow)"></path>
+               <defs>
+                 <marker id="arrow" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                   <path d="M 0 0 L 10 5 L 0 10 z" fill="#950EDB"></path>
+                 </marker>
+               </defs>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- SLIDE 3: COMPETITIVE LANDSCAPE --- -->
+    <section class="max-w-6xl mx-auto px-6 py-20 animate-section" id="slide3Ref">
+      <div class="bg-[#0A0A0A] pixel-border pixel-shadow p-8 lg:p-12 relative overflow-hidden">
+        <h2 class="font-pixel text-2xl mb-12 uppercase text-[#FFD700] text-center">Competitive Landscape</h2>
+        
+        <div class="flex flex-col lg:flex-row gap-16 items-center lg:items-stretch">
+          
+          <!-- 2x2 Matrix -->
+          <div class="w-full lg:w-2/3 flex flex-col items-center justify-center mb-8 lg:mb-0">
+             <div class="relative w-full max-w-md aspect-square border-4 border-[#E2E8F0] bg-[#050505] shadow-[8px_8px_0px_#1E293B]">
+                
+                <!-- Axis Labels -->
+                <span class="absolute -top-10 left-1/2 -translate-x-1/2 font-metric text-lg text-[#E2E8F0] uppercase tracking-widest whitespace-nowrap">Super-App Synergy</span>
+                <span class="absolute -bottom-10 left-1/2 -translate-x-1/2 font-metric text-lg text-[#E2E8F0] uppercase tracking-widest whitespace-nowrap">Standalone</span>
+                
+                <span class="absolute top-1/2 -left-8 -translate-y-1/2 -translate-x-full font-metric text-lg text-[#E2E8F0] uppercase tracking-widest whitespace-nowrap">Premium</span>
+                <span class="absolute top-1/2 -right-8 -translate-y-1/2 translate-x-full font-metric text-lg text-[#E2E8F0] uppercase tracking-widest whitespace-nowrap">Utility</span>
+
+                <!-- Grid Lines -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div class="w-full h-1 border-t-2 border-dashed border-[#1E293B]"></div>
+                  <div class="absolute h-full w-1 border-l-2 border-dashed border-[#1E293B]"></div>
+                </div>
+
+                <!-- Quadrant Hints -->
+                <div class="absolute top-3 left-3 font-pixel text-[8px] text-[#1E293B] opacity-70">PREMIUM / SYNERGY</div>
+                <div class="absolute top-3 right-3 font-pixel text-[8px] text-[#1E293B] opacity-70">UTILITY / SYNERGY</div>
+                <div class="absolute bottom-3 left-3 font-pixel text-[8px] text-[#1E293B] opacity-70">PREMIUM / STANDALONE</div>
+                <div class="absolute bottom-3 right-3 font-pixel text-[8px] text-[#1E293B] opacity-70">UTILITY / STANDALONE</div>
+
+                <!-- Competitor Markers -->
+                <div class="absolute w-6 h-6 bg-[#950EDB] pixel-border z-20 flex items-center justify-center anim-marker" style="left: 20%; bottom: 80%; transition-delay: 0.1s;">
+                  <span class="absolute -top-8 font-pixel text-xs text-[#950EDB] drop-shadow-md">Zepto</span>
+                </div>
+                
+                <div class="absolute w-5 h-5 bg-[#E2E8F0] pixel-border z-10 anim-marker" style="left: 70%; bottom: 50%; transition-delay: 0.2s;">
+                  <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 font-metric text-sm text-[#E2E8F0]">Blinkit</span>
+                </div>
+
+                <div class="absolute w-5 h-5 bg-[#FFD700] pixel-border z-10 anim-marker" style="left: 60%; bottom: 70%; transition-delay: 0.3s;">
+                  <span class="absolute -top-6 left-1/2 -translate-x-1/2 font-metric text-sm whitespace-nowrap text-[#FFD700]">Swiggy Instamart</span>
+                </div>
+
+                <div class="absolute w-5 h-5 bg-[#334155] pixel-border z-10 anim-marker" style="left: 30%; bottom: 60%; transition-delay: 0.4s;">
+                  <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 font-metric text-sm whitespace-nowrap text-[#334155]">Amazon Fresh</span>
+                </div>
+
+                <div class="absolute w-5 h-5 bg-[#1E293B] pixel-border z-10 anim-marker" style="left: 40%; bottom: 30%; transition-delay: 0.5s;">
+                  <span class="absolute -bottom-6 left-1/2 -translate-x-1/2 font-metric text-sm text-[#E2E8F0]">BigBasket</span>
+                </div>
+
+             </div>
+          </div>
+
+          <!-- Feature Snapshot -->
+          <div class="w-full lg:w-1/3 flex flex-col justify-center space-y-6">
+            <h3 class="font-pixel text-sm mb-4 border-b-2 border-[#1E293B] pb-2">EDGE SNAPSHOT</h3>
+            
+            <div class="bg-[#050505] pixel-border p-4 flex justify-between items-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#950EDB]">
+              <span class="font-body text-sm font-bold">Gen Z Brand Recall</span>
+              <div class="flex gap-3 font-pixel text-xs">
+                <span class="text-[#950EDB] bg-[#950EDB]/10 px-2 py-1">Z:✅</span> <span class="text-gray-600 px-2 py-1">O:⚠️</span>
+              </div>
+            </div>
+
+            <div class="bg-[#050505] pixel-border p-4 flex justify-between items-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#950EDB]">
+              <span class="font-body text-sm font-bold">Premium Categories</span>
+              <div class="flex gap-3 font-pixel text-xs">
+                <span class="text-[#950EDB] bg-[#950EDB]/10 px-2 py-1">Z:✅</span> <span class="text-gray-600 px-2 py-1">O:⚠️</span>
+              </div>
+            </div>
+
+            <div class="bg-[#050505] pixel-border p-4 flex justify-between items-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_#950EDB]">
+              <span class="font-body text-sm font-bold">Cafe Innovation</span>
+              <div class="flex gap-3 font-pixel text-xs">
+                <span class="text-[#950EDB] bg-[#950EDB]/10 px-2 py-1">Z:✅</span> <span class="text-gray-600 px-2 py-1">O:⛔</span>
+              </div>
+            </div>
+            
+            <p class="font-body text-xs text-[#950EDB] mt-4 p-3 bg-[#950EDB]/10 border border-[#950EDB]/30 leading-relaxed">
+              Zepto's edge is brand heat, premium categories, and Cafe innovation over ecosystem reliance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- --- SLIDE 4: SWOT & DRIVERS --- -->
+    <section class="max-w-6xl mx-auto px-6 py-20">
+      <h2 class="font-pixel text-2xl mb-12 uppercase text-center">Strategic Mapping</h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        
+        <!-- SWOT Matrix -->
+        <div class="grid grid-cols-2 gap-0 pixel-border bg-[#050505] shadow-[8px_8px_0px_#1E293B]">
+          <!-- Strengths -->
+          <div class="p-6 border-b-4 border-r-4 border-[#E2E8F0] bg-[rgba(149,14,219,0.15)] relative">
+            <h3 class="font-pixel text-[#950EDB] mb-4 text-sm">STRENGTHS</h3>
+            <ul class="font-body text-sm space-y-2 list-disc pl-4 text-[#E2E8F0]">
+              <li>Gen Z brand recall</li>
+              <li>Premium positioning</li>
+              <li>Cafe innovation</li>
+              <li>Early profitability</li>
+            </ul>
+          </div>
+          <!-- Weaknesses -->
+          <div class="p-6 border-b-4 border-[#E2E8F0] bg-[#0A0A0A]">
+            <h3 class="font-pixel text-[#E2E8F0] mb-4 text-sm">WEAKNESSES</h3>
+            <ul class="font-body text-sm space-y-2 list-disc pl-4 text-gray-300">
+              <li>High dark store costs</li>
+              <li>Less ecosystem synergy</li>
+              <li>Metro concentration</li>
+            </ul>
+          </div>
+          <!-- Opportunities -->
+          <div class="p-6 border-r-4 border-[#E2E8F0] bg-[#1E293B]">
+            <h3 class="font-pixel text-[#FFD700] mb-4 text-sm">OPPORTUNITIES</h3>
+            <ul class="font-body text-sm space-y-2 list-disc pl-4 text-[#E2E8F0]">
+              <li>Premium category scale</li>
+              <li>Cafe scaling</li>
+              <li>Ad platform margin</li>
+            </ul>
+          </div>
+          <!-- Threats -->
+          <div class="p-6 bg-[#0F172A]">
+            <h3 class="font-pixel text-red-400 mb-4 text-sm">THREATS</h3>
+            <ul class="font-body text-sm space-y-2 list-disc pl-4 text-gray-400">
+              <li>Blinkit ecosystem</li>
+              <li>Regulatory scrutiny</li>
+              <li>Economic downturn</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Action Drivers -->
+        <div class="flex flex-col justify-between space-y-6">
+          
+          <div class="bg-[#0A0A0A] border-4 border-[#950EDB] p-5 shadow-[4px_4px_0px_#950EDB] transform hover:-translate-y-1 transition-transform">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-2xl">🎮</span>
+              <h4 class="font-pixel text-xs">USER DRIVER</h4>
+            </div>
+            <p class="font-metric text-lg mb-2 text-white">Want Premium Quality, Social Discovery, Reliable Speed.</p>
+            <p class="font-body text-xs text-[#950EDB] bg-[#950EDB]/10 p-2 border border-[#950EDB]">
+              <strong>So What:</strong> Lead with "Premium Speed" messaging & social features.
+            </p>
+          </div>
+
+          <div class="bg-[#0A0A0A] border-4 border-[#E2E8F0] p-5 shadow-[4px_4px_0px_#E2E8F0] transform hover:-translate-y-1 transition-transform">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-2xl">🕹️</span>
+              <h4 class="font-pixel text-xs text-[#E2E8F0]">PRODUCT DRIVER</h4>
+            </div>
+            <p class="font-metric text-lg mb-2 text-white">Premium Categories + Cafe + Advertising</p>
+            <p class="font-body text-xs text-[#E2E8F0] bg-[#E2E8F0]/10 p-2 border border-[#E2E8F0]">
+              <strong>So What:</strong> Invest in self-serve ad platform & phygital retail expansion.
+            </p>
+          </div>
+
+          <div class="bg-[#0A0A0A] border-4 border-[#1E293B] p-5 shadow-[4px_4px_0px_#1E293B] transform hover:-translate-y-1 transition-transform">
+            <div class="flex items-center gap-3 mb-2">
+              <span class="text-2xl">🎯</span>
+              <h4 class="font-pixel text-xs text-[#FFD700]">MARKET DRIVER</h4>
+            </div>
+            <p class="font-metric text-lg mb-2 text-white">Premiumization Trend + Gen Z Adoption + Tier 2 Expansion</p>
+            <p class="font-body text-xs text-[#FFD700] bg-[#FFD700]/10 p-2 border border-[#FFD700]">
+              <strong>So What:</strong> Scale premium offerings & test optimized Tier 2 formats.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --- SLIDE 5: CORE INSIGHT & OPPORTUNITY ZONES --- -->
+    <section class="max-w-5xl mx-auto px-6 py-20">
+      
+      <!-- Insight Box -->
+      <div class="bg-[#0A0A0A] border-4 border-[#950EDB] p-8 md:p-12 shadow-[8px_8px_0px_#950EDB] relative mb-20 mt-10">
+        <div class="absolute -top-6 -left-6 z-20 transform -rotate-12 bg-[#FFD700] text-[#0A0A0A] pixel-border font-pixel text-sm p-3 shadow-[4px_4px_0px_#E2E8F0]">
+          KEY INSIGHT
+        </div>
+        
+        <p class="font-body text-lg md:text-xl leading-relaxed text-center">
+          Zepto has won the <strong>"Gen Z Mindshare"</strong>, but the real battleground is shifting to <strong class="text-[#950EDB] text-2xl inline-block mt-2 font-pixel">Profitable Premium at Scale.</strong><br/><br/>
+          <span class="text-sm opacity-90">The unlock is leveraging brand heat to increase basket size through premium categories, monetize attention through advertising, and blend online/offline through Cafe by Zepto.</span>
+        </p>
+      </div>
+
+      <!-- Opportunity Blocks -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <!-- Decorative Arrows behind -->
+        <div class="hidden md:block absolute top-0 left-1/2 w-full h-12 border-t-4 border-dashed border-[#1E293B] -translate-x-1/2 -translate-y-10"></div>
+
+        <!-- Card 1 -->
+        <div class="bg-[#0A0A0A] border-4 border-[#E2E8F0] p-6 shadow-[6px_6px_0px_#E2E8F0] flex flex-col items-center text-center">
+          <span class="text-4xl mb-4">🎮</span>
+          <h3 class="font-pixel text-xs mb-4 uppercase leading-relaxed text-[#E2E8F0]">The "Premium Flywheel"</h3>
+          <p class="font-body text-sm bg-[#E2E8F0]/10 p-3 border border-[#E2E8F0]/30 w-full mt-auto text-[#E2E8F0]">
+            Curate electronics, beauty, gifting with white-glove delivery.
+          </p>
+        </div>
+
+        <!-- Card 2 (Highlighted) -->
+        <div class="bg-[#0A0A0A] border-4 border-[#950EDB] p-6 shadow-[6px_6px_0px_#950EDB] flex flex-col items-center text-center relative transform md:-translate-y-4">
+          <div class="absolute -top-4 -right-4 z-20 transform rotate-12 bg-[#FFD700] text-[#0A0A0A] pixel-border font-pixel text-[10px] p-2">
+            EXPLORE
+          </div>
+          <span class="text-4xl mb-4">🕹️</span>
+          <h3 class="font-pixel text-xs mb-4 uppercase text-[#950EDB] leading-relaxed">Cafe by Zepto Expansion</h3>
+          <p class="font-body text-sm bg-[#950EDB]/10 p-3 border border-[#950EDB]/30 w-full mt-auto text-white">
+            Scale phygital concept. Integrate online/offline loyalty to drive footfall.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-[#0A0A0A] border-4 border-[#1E293B] p-6 shadow-[6px_6px_0px_#1E293B] flex flex-col items-center text-center">
+          <span class="text-4xl mb-4">🎯</span>
+          <h3 class="font-pixel text-xs mb-4 uppercase text-gray-300 leading-relaxed">Gen Z Social & Gamification</h3>
+          <p class="font-body text-sm bg-[#1E293B]/50 p-3 border border-[#1E293B]/80 w-full mt-auto text-gray-300">
+            Wishlists, gamified rewards, influencer drops to drive discovery.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- --- SLIDE 6: CTA + CONTACT --- -->
+    <section class="max-w-4xl mx-auto px-6 py-32 flex flex-col items-center text-center">
+      
+      <div class="bg-[#0A0A0A] border-[6px] border-[#E2E8F0] shadow-[12px_12px_0px_#950EDB] w-full relative overflow-hidden">
+        <!-- Accent Bar -->
+        <div class="h-2 w-full bg-[#950EDB]"></div>
+        
+        <div class="p-10 md:p-16">
+          <h2 class="font-pixel text-xl md:text-2xl mb-8 uppercase text-white leading-relaxed">
+            Let's Build The<br/>Premium Lifestyle OS
+          </h2>
+          
+          <p class="font-body text-base md:text-lg mb-12 max-w-2xl mx-auto">
+            I'm Kunj Harjai, looking for a Summer 2026 internship, and excited to tackle problems scaling Zepto's profitable premium ecosystem.
+          </p>
+
+          <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+            <a href="https://www.linkedin.com/in/kunjharjai/" target="_blank" rel="noopener noreferrer" class="bg-[#1E293B] text-[#E2E8F0] font-pixel text-xs uppercase py-4 px-6 pixel-border shadow-[4px_4px_0px_#E2E8F0] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#E2E8F0] transition-all text-center cursor-pointer">
+              LinkedIn &rarr;
+            </a>
+            <a href="https://calendly.com/kunjharjai13/30min" target="_blank" rel="noopener noreferrer" class="bg-[#950EDB] text-white font-pixel text-xs uppercase py-4 px-6 pixel-border border-white shadow-[4px_4px_0px_#E2E8F0] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_#E2E8F0] transition-all text-center cursor-pointer">
+              Schedule Chat &rarr;
+            </a>
+          </div>
+
+          <div class="font-metric text-xl bg-[#050505] inline-block p-4 pixel-border border-[#1E293B] text-left mx-auto">
+            <p class="mb-1 text-[#950EDB]">&gt; Kunj.24141@sscbs.du.ac.in</p>
+            <p class="text-gray-400">&gt; +91 93 109 29 096</p>
+          </div>
+        </div>
+        
+        <!-- Ticker Stamp -->
+        <div class="bg-[#FFD700] py-2 px-4 font-pixel text-[10px] text-[#0A0A0A] border-t-4 border-[#E2E8F0]">
+          * I have some rough thoughts on Premium Lifestyle OS frameworks — happy to share if useful.
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Intersection Observer Script for Animations -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      document.querySelectorAll('.animate-section').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
